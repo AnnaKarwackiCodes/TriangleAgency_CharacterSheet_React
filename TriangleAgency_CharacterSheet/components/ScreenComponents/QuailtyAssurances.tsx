@@ -1,0 +1,1 @@
+//check boxes for the different abilties and their max value listed
