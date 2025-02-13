@@ -29,7 +29,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Tab One',
+          title: 'Agent Information',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerRight: () => (
             <Link href="/modal" asChild>
@@ -48,9 +48,44 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="work-life-balance"
         options={{
-          title: 'Tab Two',
+          title: 'Work/Life Balance',
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="anomlyInfo"
+        options={{
+          title: 'Anomly Info',
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="performance"
+        options={{
+          title: 'Work Performance',
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="relationships"
+        options={{
+          title: 'Relationships',
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="benefits"
+        options={{
+          title: 'Benefits',
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="notes"
+        options={{
+          title: 'Notes',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />

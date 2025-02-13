@@ -1,0 +1,1 @@
+//to format detailed information for anomaly abilities
