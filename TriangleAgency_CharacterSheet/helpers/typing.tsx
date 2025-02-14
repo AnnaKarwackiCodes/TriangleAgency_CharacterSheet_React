@@ -3,6 +3,7 @@ interface FillInText{
     responseTitle: string,
     textId: string,
     saveCall: Function,
+    responseText: string
 }
 
 export {FillInText};
