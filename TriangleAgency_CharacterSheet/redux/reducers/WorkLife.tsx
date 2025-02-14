@@ -1,7 +1,7 @@
 import { createSlice, configureStore } from '@reduxjs/toolkit'
 
-const counterSlice = createSlice({
-  name: 'user info',
+const workLife = createSlice({
+  name: 'Work/Life infor',
   initialState: {
     value: 0
   },
@@ -19,8 +19,6 @@ const counterSlice = createSlice({
   }
 })
 
-export const { incremented, decremented } = counterSlice.actions
+export const { incremented, decremented } = workLife.actions
 
-const store = configureStore({
-  reducer: counterSlice.reducer
-})
+export default workLife.reducer;
