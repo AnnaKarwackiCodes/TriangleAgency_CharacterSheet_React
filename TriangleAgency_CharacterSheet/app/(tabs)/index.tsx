@@ -7,10 +7,11 @@ import React = require('react');
 import { useDispatch, useSelector } from 'react-redux';
 import { setAQ } from '@/redux/reducers/UserInfo';
 import AgentBadgeComponent from '@/components/ScreenComponents/AgentBadgeComponent';
-import { Box } from '@mui/material';
+import useScreenSize from '@/helpers/useScreenSize';
 
 export default function TabOneScreen() {
   const dispatch = useDispatch();
+  const screenSize = useScreenSize();
   const AQ1Text = useSelector((store: any) => {
     return store.userInfo.AQ1;
   });
@@ -89,11 +90,11 @@ export default function TabOneScreen() {
     <View style={styles.container}>
       <Text style={styles.title}>Welcome Agent</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <View style={styles.scrollViewHolder}>
-        <View style={{width: '50%', display: 'flex', alignItems: 'flex-end'}}>
+      <View style={screenSize.width <= 500 ? styles.scrollViewHolderCol : styles.scrollViewHolderRow}>
+        <View style={screenSize.width <= 500? styles.AgentBadgeComponentCol : styles.AgentBadgeComponentRow}>
             <AgentBadgeComponent />
           </View>
-        <View style={{width: '50%', height: '100%', alignItems: 'center', justifyContent:'center'}}>
+        <View style={screenSize.width <= 500 ? styles.ScrollViewCol : styles.ScrollViewRow}>
           <ScrollView style={{width: '100%', alignContent:'center'}}>
                 {prompts.map((element: any) => {
                   return (<View style={{marginRight: 25}}>
@@ -115,7 +116,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignContent: 'center',
     alignItems:'center',
-    width: '100%'
+    width: '100%',
+    height: '100%'
   },
   title: {
     fontSize: 20,
@@ -127,10 +129,32 @@ const styles = StyleSheet.create({
     height: 1,
     width: '80%',
   },
-  scrollViewHolder: {
+  scrollViewHolderRow: {
     width: '100%',
     height: '85%',
     display: 'flex',
     flexDirection: 'row',
   },
+  scrollViewHolderCol: {
+    width: '100%',
+    height: '80%',
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  AgentBadgeComponentRow:{
+    width: '50%', 
+    display: 'flex', 
+    alignItems: 'flex-end',
+  },
+  AgentBadgeComponentCol:{
+    width: '100%', 
+    display: 'flex', 
+    alignItems: 'center',
+  },
+  ScrollViewRow:{
+    width: '50%', height: '100%', alignItems: 'center', justifyContent:'center'
+  },
+  ScrollViewCol:{
+    width: '100%', height: '60%', alignItems: 'center', justifyContent:'center'
+  }
 });
