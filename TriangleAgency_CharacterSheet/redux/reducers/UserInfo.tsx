@@ -3,6 +3,8 @@ import { createSlice, configureStore } from '@reduxjs/toolkit'
 const userInfo = createSlice({
   name: 'user info',
   initialState: {
+    agentName: '',
+    agentPronouns: '',
     AQ1: '',
     AQ2: '',
     AQ3: '',
@@ -47,10 +49,14 @@ const userInfo = createSlice({
         case 'notes':
           state.notes = action.payload.value;
       }
+    },
+    setNamePronouns:(state, action) =>{
+      state.agentName = action.payload.name;
+      state.agentPronouns = action.payload.pronouns;
     }
   }
 })
 
-export const { setAQ } = userInfo.actions
+export const { setAQ, setNamePronouns } = userInfo.actions
 
 export default userInfo.reducer;
