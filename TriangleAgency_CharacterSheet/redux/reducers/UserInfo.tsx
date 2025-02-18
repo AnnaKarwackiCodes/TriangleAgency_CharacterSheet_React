@@ -10,6 +10,7 @@ const userInfo = createSlice({
     AQ5: '',
     AQ6: '',
     AQ7: '',
+    notes: '',
   },
   reducers: {
     setAQ: (state, action) => {
@@ -43,6 +44,8 @@ const userInfo = createSlice({
         case 'AQ7':
           state.AQ7 = action.payload.value;
           break;
+        case 'notes':
+          state.notes = action.payload.value;
       }
     }
   }

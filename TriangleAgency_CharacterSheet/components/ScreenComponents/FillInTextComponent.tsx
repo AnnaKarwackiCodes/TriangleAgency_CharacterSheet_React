@@ -54,7 +54,8 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
-    width: 'auto'
+    width: 'auto',
+    padding: 15,
   },
   prompt:{
     paddingBottom: 5,
@@ -66,8 +67,8 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   card: {
-    margin: 5,
-    width: 350
+    margin: 15,
+    width: '100%',
   },
   bodyText: {
     fontSize:15,

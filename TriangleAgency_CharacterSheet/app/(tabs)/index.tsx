@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
 
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
@@ -6,6 +6,8 @@ import FillInTextComponent from '@/components/ScreenComponents/FillInTextCompone
 import React = require('react');
 import { useDispatch, useSelector } from 'react-redux';
 import { setAQ } from '@/redux/reducers/UserInfo';
+import AgentBadgeComponent from '@/components/ScreenComponents/AgentBadgeComponent';
+import { Box } from '@mui/material';
 
 export default function TabOneScreen() {
   const dispatch = useDispatch();
@@ -14,6 +16,24 @@ export default function TabOneScreen() {
   });
   const AQ2Text = useSelector((store: any) => {
     return store.userInfo.AQ2;
+  });
+  const AQ3Text = useSelector((store: any) => {
+    return store.userInfo.AQ3;
+  });
+  const AQ4Text = useSelector((store: any) => {
+    return store.userInfo.AQ4;
+  });
+  const AQ5Text = useSelector((store: any) => {
+    return store.userInfo.AQ5;
+  });
+  const AQ6Text = useSelector((store: any) => {
+    return store.userInfo.AQ6;
+  });
+  const AQ7Text = useSelector((store: any) => {
+    return store.userInfo.AQ7;
+  });
+  const NotesText = useSelector((store: any) => {
+    return store.userInfo.notes;
   });
 
   function SaveResponse(id: string, value: string){
@@ -30,6 +50,36 @@ export default function TabOneScreen() {
       question: 'How did you come in contact with your Anomaly?',
       id: 'AQ2',
       object: AQ2Text
+    },
+    {
+      question: 'Do your powers have a unique visual manifestation?',
+      id: 'AQ3',
+      object: AQ3Text
+    },
+    {
+      question: 'How do you take your coffee?',
+      id: 'AQ4',
+      object: AQ4Text
+    },
+    {
+      question: 'Please describe your prior work experience',
+      id: 'AQ5',
+      object: AQ5Text
+    },
+    {
+      question: 'What is your level of familiarity with Adobe, Excel, and Google Suite?',
+      id: 'AQ6',
+      object: AQ6Text
+    },
+    {
+      question: 'What do you bring to the table in a collaborative work enviroment?',
+      id: 'AQ7',
+      object: AQ7Text
+    },
+    {
+      question: 'Additional Notes',
+      id: 'notes',
+      object: NotesText
     }
   ];
 
@@ -39,9 +89,20 @@ export default function TabOneScreen() {
     <View style={styles.container}>
       <Text style={styles.title}>Welcome Agent</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      {prompts.map((element: any) => {
-        return <FillInTextComponent promptQuestion={element.question} responseTitle='Response' textId={element.id} saveCall={SaveResponse} responseText={element.object}/>
-      })}
+      <View style={styles.scrollViewHolder}>
+        <View style={{width: '50%', display: 'flex', alignItems: 'flex-end'}}>
+            <AgentBadgeComponent />
+          </View>
+        <View style={{width: '50%', height: '100%', alignItems: 'center', justifyContent:'center'}}>
+          <ScrollView style={{width: '100%', alignContent:'center'}}>
+                {prompts.map((element: any) => {
+                  return (<View style={{marginRight: 25}}>
+                    <FillInTextComponent promptQuestion={element.question} responseTitle='Response' textId={element.id} saveCall={SaveResponse} responseText={element.object}/>
+                  </View>)
+                })}
+              </ScrollView>
+          </View>
+      </View>
       
     </View>
   );
@@ -51,16 +112,25 @@ export default function TabOneScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
     justifyContent: 'center',
+    alignContent: 'center',
+    alignItems:'center',
+    width: '100%'
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
+    textAlign: 'center'
   },
   separator: {
     marginVertical: 30,
     height: 1,
     width: '80%',
+  },
+  scrollViewHolder: {
+    width: '100%',
+    height: '85%',
+    display: 'flex',
+    flexDirection: 'row',
   },
 });

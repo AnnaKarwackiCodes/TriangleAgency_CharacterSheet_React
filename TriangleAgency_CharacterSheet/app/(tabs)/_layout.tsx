@@ -1,4 +1,3 @@
-import React from 'react';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs } from 'expo-router';
 import { Pressable } from 'react-native';
@@ -6,6 +5,7 @@ import { Pressable } from 'react-native';
 import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
 import { useClientOnlyValue } from '@/components/useClientOnlyValue';
+import React = require('react');
 
 // You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
 function TabBarIcon(props: {
@@ -30,9 +30,9 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Agent Information',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color } : any) => <TabBarIcon name="code" color={color} />,
           headerRight: () => (
-            <Link href="/modal" asChild>
+            <Link href="/agentinfomodal" asChild>
               <Pressable>
                 {({ pressed }) => (
                   <FontAwesome
@@ -51,42 +51,42 @@ export default function TabLayout() {
         name="work-life-balance"
         options={{
           title: 'Work/Life Balance',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color } : any) => <TabBarIcon name="code" color={color} />,
         }}
       />
       <Tabs.Screen
         name="anomlyInfo"
         options={{
           title: 'Anomly Info',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color } : any) => <TabBarIcon name="code" color={color} />,
         }}
       />
       <Tabs.Screen
         name="performance"
         options={{
           title: 'Work Performance',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color } : any) => <TabBarIcon name="code" color={color} />,
         }}
       />
       <Tabs.Screen
         name="relationships"
         options={{
           title: 'Relationships',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color } : any) => <TabBarIcon name="code" color={color} />,
         }}
       />
       <Tabs.Screen
         name="benefits"
         options={{
           title: 'Benefits',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color } : any) => <TabBarIcon name="code" color={color} />,
         }}
       />
       <Tabs.Screen
         name="notes"
         options={{
           title: 'Notes',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color } : any) => <TabBarIcon name="code" color={color} />,
         }}
       />
     </Tabs>
