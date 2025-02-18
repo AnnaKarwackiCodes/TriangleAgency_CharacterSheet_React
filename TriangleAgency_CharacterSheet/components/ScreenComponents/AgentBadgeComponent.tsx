@@ -6,6 +6,8 @@ import ImageUpload from './helpers/imageUpload';
 import { Button, Card, CardContent, TextField } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { setNamePronouns } from '@/redux/reducers/UserInfo';
+import { FontAwesome } from '@expo/vector-icons';
+import { Image } from 'react-native';
 
 export default function AgentBadgeComponent() { 
 
@@ -29,6 +31,7 @@ export default function AgentBadgeComponent() {
     <Card style={{width: '70%', margin: 15}}>
         <CardContent>
             <View style={styles.container}>
+                <Image source={require('../../assets/images/TALogo.png')} style={{height: 60, width: 160, marginBottom:15}}/>
                 <View style={{marginBottom: 15}}>
                     <ImageUpload />
                 </View>
