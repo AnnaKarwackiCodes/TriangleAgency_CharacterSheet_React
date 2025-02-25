@@ -3,10 +3,10 @@ import { StyleSheet } from 'react-native';
 import { Text, View } from '@/components/Themed';
 import { Button, Card, CardContent, TextField } from '@mui/material';
 import { FillInText } from '@/helpers/typing';
-import React = require('react');
 import { useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import store from '@/redux/store';
+import React from 'react';
 
 export default function FillInTextComponent({promptQuestion, responseTitle, textId, saveCall, responseText} : FillInText) {
   const [textInput, setTextInput] = useState('');

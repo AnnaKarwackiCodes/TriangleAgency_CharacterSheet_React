@@ -3,22 +3,31 @@ import { createSlice, configureStore } from '@reduxjs/toolkit'
 const workLife = createSlice({
   name: 'Work/Life infor',
   initialState: {
-    value: 0
+    mvpValue: 0,
+    probationValue: 0,
+    competencyValue: 0,
+    realityValue: 0,
+    anomalyValue: 0,
   },
   reducers: {
-    incremented: state => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
-      state.value += 1
+    setMVP: (state, action) => {
+      state.mvpValue = action.payload.value;
     },
-    decremented: state => {
-      state.value -= 1
-    }
+    setProbation: (state, action) => {
+      state.probationValue = action.payload.value;
+    },
+    setCompetency: (state, action) => {
+      state.competencyValue = action.payload.value;
+    },
+    setReality: (state, action) => {
+      state.realityValue = action.payload.value;
+    },
+    setAnomaly: (state, action) => {
+      state.anomalyValue = action.payload.value;
+    },
   }
 })
 
-export const { incremented, decremented } = workLife.actions
+export const { setMVP, setProbation, setCompetency, setReality, setAnomaly } = workLife.actions
 
 export default workLife.reducer;
