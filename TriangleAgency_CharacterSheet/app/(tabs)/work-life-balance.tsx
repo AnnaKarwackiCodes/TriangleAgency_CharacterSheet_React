@@ -14,36 +14,50 @@ export default function WorkLifeScreen() {
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <Box style={{display: 'flex',
           flexDirection: 'row'}}>
-        <Box style={{width: 300, backgroundColor: "#ffd1d5", height: 60, alignItems: 'center', justifyContent: 'center',  display: 'flex',
-          flexDirection: 'row', padding: 10, margin: 5}} sx={{ border: 1, borderColor:'red', borderRadius: '16px' }}>
-          <Box style={{padding: 15}}>
-            <WarningIcon style={{color: 'red'}}/>
+        <Box style={{display: 'flex', flexDirection: 'column'}}>
+          <Box style={{display: 'flex', flexDirection: 'row', width: 300, backgroundColor: "#ffd1d5", height: 'auto', alignItems: 'center', justifyContent: 'center', padding: 10, margin: 5}} sx={{ border: 1, borderColor:'red', borderRadius: '16px' }}>
+            <Box style={{padding: 15}}>
+              <WarningIcon style={{color: 'red'}}/>
+            </Box>
+            <Text style={{color: 'red', fontSize: 17, fontWeight: '500'}}>Each time you mark a box, a box will be striked out from the end of the other paths </Text>
           </Box>
-          <Text style={{color: 'red', fontSize: 17, fontWeight: '500'}}>Each time you mark a box, a box will be striked out from the end of the other paths </Text>
+          <Box style={{margin: 10}}>
+            <Text>Mark 1 box per available time after each mission</Text>
+          </Box>
         </Box>
-        <Box style={{width: 300, backgroundColor: "white", height: 60, alignItems: 'center', justifyContent: 'center',  display: 'flex',
-          flexDirection: 'row', padding: 10, margin: 5}} sx={{ border: 1, borderColor:'red', borderRadius: '16px' }}>
-            <Box style={{padding: 15}}>
-              <PersonAddIcon style={{color: 'red'}}/>
-            </Box>
-            <Box fontStyle={{display: 'flex', flexDirection: 'column'}}>
-              <Text style={{color: 'red', fontSize: 20, fontWeight: '800'}}>MVP</Text>
-              <Text style={{color: 'red', fontSize: 15, fontWeight: '500'}}>Times Recieved</Text>
-            </Box>
-            <TextField style={{width: 50, paddingLeft: 5, paddingRight: 5}}/>
-            <Button variant="outlined" sx={{color: 'red', borderColor: 'red'}} onClick={() => { }}> Save </Button>
+        <Box>
+          <Box style={{width: 300, backgroundColor: "white", height: '80', alignItems: 'center', justifyContent: 'center',  display: 'flex',
+            flexDirection: 'row', padding: 10, margin: 5}} sx={{ border: 1, borderColor:'red', borderRadius: '16px' }}>
+              <Box style={{padding: 15}}>
+                <PersonAddIcon style={{color: 'red'}}/>
+              </Box>
+              <Box fontStyle={{display: 'flex', flexDirection: 'column'}}>
+                <Text style={{color: 'red', fontSize: 20, fontWeight: '800'}}>MVP</Text>
+                <Text style={{color: 'red', fontSize: 15, fontWeight: '500'}}>Times Recieved</Text>
+              </Box>
+              <TextField style={{width: 50, paddingLeft: 5, paddingRight: 5}}/>
+              <Button variant="outlined" sx={{color: 'red', borderColor: 'red'}} onClick={() => { }}> Save </Button>
+          </Box>
+          <Box style={{margin: 10, width: 300}}>
+              <Text>Awarded to the player who earns the most Commendations</Text>
+          </Box>
         </Box>
-        <Box style={{width: 300, backgroundColor: "white", height: 60, alignItems: 'center', justifyContent: 'center',  display: 'flex',
-          flexDirection: 'row', padding: 10, margin: 5}} sx={{ border: 1, borderColor:'black', borderRadius: '16px' }}>
-            <Box style={{padding: 15}}>
-              <PersonAddIcon style={{color: 'black'}}/>
-            </Box>
-            <Box fontStyle={{display: 'flex', flexDirection: 'column'}}>
-              <Text style={{color: 'black', fontSize: 20, fontWeight: '800'}}>Probation</Text>
-              <Text style={{color: 'black', fontSize: 15, fontWeight: '500'}}>Times Recieved</Text>
-            </Box>
-            <TextField style={{width: 50, paddingLeft: 5, paddingRight: 5}}/>
-            <Button variant="outlined" sx={{color: 'black', borderColor: 'black'}} onClick={() => { }}> Save </Button>
+        <Box>
+          <Box style={{width: 300, backgroundColor: "white", height: 60, alignItems: 'center', justifyContent: 'center',  display: 'flex',
+            flexDirection: 'row', padding: 10, margin: 5}} sx={{ border: 1, borderColor:'black', borderRadius: '16px' }}>
+              <Box style={{padding: 15}}>
+                <PersonAddIcon style={{color: 'black'}}/>
+              </Box>
+              <Box fontStyle={{display: 'flex', flexDirection: 'column'}}>
+                <Text style={{color: 'black', fontSize: 20, fontWeight: '800'}}>Probation</Text>
+                <Text style={{color: 'black', fontSize: 15, fontWeight: '500'}}>Times Recieved</Text>
+              </Box>
+              <TextField style={{width: 50, paddingLeft: 5, paddingRight: 5}}/>
+              <Button variant="outlined" sx={{color: 'black', borderColor: 'black'}} onClick={() => { }}> Save </Button>
+          </Box>
+          <Box style={{margin: 10, width: 300}}>
+              <Text>Awarded to the player who earns the most Demerits</Text>
+          </Box>
         </Box>
       </Box>
     </View>
