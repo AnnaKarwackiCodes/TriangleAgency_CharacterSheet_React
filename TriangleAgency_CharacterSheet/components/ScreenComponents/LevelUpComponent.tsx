@@ -16,16 +16,16 @@ export default function LevelUpComponent({title, trackLength, curValue, colDetai
     }
 
     return (
-        <Box alignContent={'center'} textAlign={'center'} padding={5}>
-            <Text>{title}</Text>
+        <Box alignContent={'center'} textAlign={'center'} padding={5} width={'90%'}>
+            <Text style={{ fontSize: 17, fontWeight: '500'}}>{title}</Text>
             <Box>
                 {createTrack()}
             </Box>
-            <Box style={{flex: 1, flexDirection: 'row'}}>
-                <Box style={{width: '50%'}} sx={{ border: 1, borderColor: 'black'}}>
+            <Box style={{flex: 1, flexDirection: 'row', width: '100%'}}>
+                <Box sx={{ border: 1, borderColor: 'black'}} >
                     <Text>{colDetails0}</Text>
                 </Box>
-                <Box style={{width: '50%'}} sx={{ border: 1, borderColor: 'black'}}>
+                <Box sx={{ border: 1, borderColor: 'black'}}>
                     <Text>{colDetails1}</Text>
                 </Box>
             </Box>
