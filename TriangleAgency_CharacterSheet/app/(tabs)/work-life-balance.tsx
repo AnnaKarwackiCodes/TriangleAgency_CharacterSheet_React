@@ -4,8 +4,11 @@ import { Text, View } from '@/components/Themed';
 import React from 'react';
 import WarningIcon from '@mui/icons-material/Warning';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import { Box, Button, TextField } from '@mui/material';
 import FillInTextComponent from '@/components/ScreenComponents/FillInTextComponent';
+import iconButtonClasses from '@mui/material';
+import IconValueComponent from '@/components/iconValueComponent';
 
 export default function WorkLifeScreen() {
   return (
@@ -25,40 +28,8 @@ export default function WorkLifeScreen() {
             <Text>Mark 1 box per available time after each mission</Text>
           </Box>
         </Box>
-        <Box>
-          <Box style={{width: 300, backgroundColor: "white", height: '80', alignItems: 'center', justifyContent: 'center',  display: 'flex',
-            flexDirection: 'row', padding: 10, margin: 5}} sx={{ border: 1, borderColor:'red', borderRadius: '16px' }}>
-              <Box style={{padding: 15}}>
-                <PersonAddIcon style={{color: 'red'}}/>
-              </Box>
-              <Box fontStyle={{display: 'flex', flexDirection: 'column'}}>
-                <Text style={{color: 'red', fontSize: 20, fontWeight: '800'}}>MVP</Text>
-                <Text style={{color: 'red', fontSize: 15, fontWeight: '500'}}>Times Recieved</Text>
-              </Box>
-              <TextField style={{width: 50, paddingLeft: 5, paddingRight: 5}}/>
-              <Button variant="outlined" sx={{color: 'red', borderColor: 'red'}} onClick={() => { }}> Save </Button>
-          </Box>
-          <Box style={{margin: 10, width: 300}}>
-              <Text>Awarded to the player who earns the most Commendations</Text>
-          </Box>
-        </Box>
-        <Box>
-          <Box style={{width: 300, backgroundColor: "white", height: 60, alignItems: 'center', justifyContent: 'center',  display: 'flex',
-            flexDirection: 'row', padding: 10, margin: 5}} sx={{ border: 1, borderColor:'black', borderRadius: '16px' }}>
-              <Box style={{padding: 15}}>
-                <PersonAddIcon style={{color: 'black'}}/>
-              </Box>
-              <Box fontStyle={{display: 'flex', flexDirection: 'column'}}>
-                <Text style={{color: 'black', fontSize: 20, fontWeight: '800'}}>Probation</Text>
-                <Text style={{color: 'black', fontSize: 15, fontWeight: '500'}}>Times Recieved</Text>
-              </Box>
-              <TextField style={{width: 50, paddingLeft: 5, paddingRight: 5}}/>
-              <Button variant="outlined" sx={{color: 'black', borderColor: 'black'}} onClick={() => { }}> Save </Button>
-          </Box>
-          <Box style={{margin: 10, width: 300}}>
-              <Text>Awarded to the player who earns the most Demerits</Text>
-          </Box>
-        </Box>
+        <IconValueComponent icon={<PersonAddIcon style={{color: 'red'}}/>} title={"MVP"} details="Times Recieved" toolTip="Awarded to the player who earns the most Commendations" saveFunc={()=>{}} color={"red"}/>
+        <IconValueComponent icon={<HighlightOffIcon style={{color: 'black'}}/>} title={"Probation"} details="Times Recieved" toolTip="Awarded to the player who earns the most Demerits" saveFunc={()=>{}} color={"black"}/>
       </Box>
     </View>
   );
