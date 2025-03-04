@@ -3,11 +3,11 @@ import { ScrollView, StyleSheet } from 'react-native';
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
 import FillInTextComponent from '@/components/ScreenComponents/FillInTextComponent';
-import React = require('react');
 import { useDispatch, useSelector } from 'react-redux';
 import { setAQ } from '@/redux/reducers/UserInfo';
 import AgentBadgeComponent from '@/components/ScreenComponents/AgentBadgeComponent';
 import useScreenSize from '@/helpers/useScreenSize';
+import React from 'react';
 
 export default function TabOneScreen() {
   const dispatch = useDispatch();

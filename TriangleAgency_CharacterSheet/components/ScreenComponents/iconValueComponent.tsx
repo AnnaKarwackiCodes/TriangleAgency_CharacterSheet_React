@@ -1,7 +1,6 @@
 import { Box, TextField, Button } from '@mui/material';
 import React from 'react';
-import { StyleSheet } from 'react-native';
-import { Text, View } from '@/components/Themed';
+import { Text } from '@/components/Themed';
 
 export default function IconValueComponent({icon, title, details, toolTip, saveFunc, color}: any){
  return (
