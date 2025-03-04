@@ -1,22 +1,21 @@
 import { StyleSheet } from 'react-native';
-import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
 import React from 'react';
 import WarningIcon from '@mui/icons-material/Warning';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
-import { Box, Button, TextField } from '@mui/material';
-import FillInTextComponent from '@/components/ScreenComponents/FillInTextComponent';
-import iconButtonClasses from '@mui/material';
+import { Box } from '@mui/material';
 import IconValueComponent from '@/components/iconValueComponent';
+import useScreenSize from '@/helpers/useScreenSize';
 
 export default function WorkLifeScreen() {
+  const screenSize = useScreenSize();
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Work/Life Balance</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <Box style={{display: 'flex',
-          flexDirection: 'row'}}>
+          flexDirection: screenSize.width <= 1000 ? 'column' : 'row'}}>
         <Box style={{display: 'flex', flexDirection: 'column'}}>
           <Box style={{display: 'flex', flexDirection: 'row', width: 300, backgroundColor: "#ffd1d5", height: 'auto', alignItems: 'center', justifyContent: 'center', padding: 10, margin: 5}} sx={{ border: 1, borderColor:'red', borderRadius: '16px' }}>
             <Box style={{padding: 15}}>
