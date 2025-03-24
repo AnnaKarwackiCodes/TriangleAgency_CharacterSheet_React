@@ -37,6 +37,24 @@ export default function WorkLifeScreen() {
   const [myRealityValue, setMyRealityValue] = useState(0);
   const [myAnomalyValue, setMyAnomalyValue] = useState(0);
 
+  const sectionInfo = {
+    compentency: {
+      title: "Compentency",
+      text1: "Each time you mark a box in your Compentency track, increase your Maximum Quailty Assurance by 1 in any Quailty, up to a maximum of 9. Then, gain 3 Commendations.",
+      text2:"When you recieve Mission MVP, mark 1 box in your Compentency track withour stricking one out from the other tracks"
+    },
+    reality: {
+      title: "Reality",
+      text1: "Each time you mark a box in your Reality Track, increase your Connection with any Relationship by 1, then repeat for for each Networked Relationship.", 
+      text2: "When you recieve neither Mission MVP nor Probation, you may increase your Connection with any Relationship by 1."
+    },
+    anomaly: {
+      title: "Anomaly",
+      text1: "Each time you mark a box in your Anomaly Track, pick one: \n PRACTICE: Mark Practiced on any Anomaly Abilty.\nBE KNOWN: Erase Practiced from an Anomly ability and ask your team that ability's question. Mark the track of the answer that gets the most votes, then recieved any unlocked Abilities.", 
+      text2: "When you recieve Probation, mark 1 box in your Anomlay track, withour striking one out from the other tracks."
+    }
+  };
+
   useEffect(()=>{
     dispatch(setCompetency({value: myCompetencyValue}));
   },[myCompetencyValue]);
@@ -74,9 +92,9 @@ export default function WorkLifeScreen() {
               <IconValueComponent icon={<PersonAddIcon style={{color: 'red'}}/>} title={"MVP"} details="Times Recieved" toolTip="Awarded to the player who earns the most Commendations" saveFunc={()=>{setMyMVPValue}} color={"red"}/>
               <IconValueComponent icon={<HighlightOffIcon style={{color: 'black'}}/>} title={"Probation"} details="Times Recieved" toolTip="Awarded to the player who earns the most Demerits" saveFunc={()=>{setMyProbationValue}} color={"black"}/>
             </Box>
-            <LevelUpComponent title="Compentency" trackLength={30} curValue={myCompetencyValue} colDetails0={"Each time you mark a box in your Compentency track, increase your Maximum Quailty Assurance by 1 in any Quailty, up to a maximum of 9. Then, gain 3 Commendations."} colDetails1={"When you recieve Mission MVP, mark 1 box in your Compentency track withour stricking one out from the other tracks"} levelUpDetails={compentencyTrack} levelUpFunc={(value: number)=>{setMyCompetencyValue(value);}}/>
-            <LevelUpComponent title="Reality" trackLength={30} curValue={myRealityValue} colDetails0={"Each time you mark a box in your Reality Track, increase your Connection with any Relationship by 1, then repeat for for each Networked Relationship."} colDetails1={"When you recieve neither Mission MVP nor Probation, you may increase your Connection with any Relationship by 1."} levelUpDetails={realityTrack} levelUpFunc={(value: number)=>{setMyRealityValue(value);}}/>
-            <LevelUpComponent title="Anomly" trackLength={30} curValue={myAnomalyValue} colDetails0={"Each time you mark a box in your Anomaly Track, pick one: \n PRACTICE: Mark Practiced on any Anomaly Abilty.\nBE KNOWN: Erase Practiced from an Anomly ability and ask your team that ability's question. Mark the track of the answer that gets the most votes, then recieved any unlocked Abilities."} colDetails1={"When you recieve Probation, mark 1 box in your Anomlay track, withour striking one out from the other tracks."} levelUpDetails={anomalyTrack} levelUpFunc={(value: number)=>{setMyAnomalyValue(value);}}/>
+            <LevelUpComponent title={sectionInfo.compentency.title} trackLength={30} curValue={myCompetencyValue} colDetails0={sectionInfo.compentency.text1} colDetails1={sectionInfo.compentency.text2} levelUpDetails={compentencyTrack} levelUpFunc={(value: number)=>{setMyCompetencyValue(value);}}/>
+            <LevelUpComponent title={sectionInfo.reality.title} trackLength={30} curValue={myRealityValue} colDetails0={sectionInfo.reality.text1} colDetails1={sectionInfo.reality.text2} levelUpDetails={realityTrack} levelUpFunc={(value: number)=>{setMyRealityValue(value);}}/>
+            <LevelUpComponent title={sectionInfo.anomaly.title} trackLength={30} curValue={myAnomalyValue} colDetails0={sectionInfo.anomaly.text1} colDetails1={sectionInfo.anomaly.text2} levelUpDetails={anomalyTrack} levelUpFunc={(value: number)=>{setMyAnomalyValue(value);}}/>
           </ScrollView>
         </View>
     </View>
