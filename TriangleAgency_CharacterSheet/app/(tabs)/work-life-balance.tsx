@@ -77,7 +77,7 @@ export default function WorkLifeScreen() {
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
         <View style={{ width: '100%', height: '85%', alignItems: 'center', justifyContent:'center' }}>
           <ScrollView style={{width: '100%', alignContent:'center'}}>
-            <Box style={{display: 'flex', width: '100%', flexDirection: screenSize.width <= 1000 ? 'column' : 'row', padding: 15}}>
+            <Box style={{display: 'flex', width: '100%', flexDirection: screenSize.width <= 1000 ? 'column' : 'row', padding: 15, justifyContent:'center'}}>
               <Box style={{display: 'flex', flexDirection: 'column'}}>
                 <Box style={{display: 'flex', flexDirection: 'row', width: 300, backgroundColor: "#ffd1d5", height: 'auto', alignItems: 'center', justifyContent: 'center', padding: 10, margin: 5}} sx={{ border: 1, borderColor:'red', borderRadius: '16px' }}>
                   <Box style={{padding: 15}}>
